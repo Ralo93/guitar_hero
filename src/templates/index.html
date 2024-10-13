@@ -1,0 +1,54 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Chord App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Guitar Chord Identification</h1>
+
+        <!-- Central image -->
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='images/test-picture.png') }}" alt="Test Image">
+        </div>
+
+        <!-- Start Listening Button -->
+        <div class="controls">
+            <button id="start-listening" class="button">Start Listening</button>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading-indicator" style="display: none; margin-top: 20px;">
+            <p>Processing audio...</p>
+        </div>
+
+        <!-- Analog Volume Meter -->
+        <div class="volume-meter">
+            <div class="gauge-body">
+                <div class="needle" id="volume-needle"></div>
+            </div>
+            <p>Volume: <span id="volume-display">0</span></p>
+        </div>
+
+        <!-- Display Predicted Chord -->
+        <div id="chord-display" class="chord-display">
+            <h2>Predicted Chord: <span id="chord-info">None</span></h2>
+        </div>
+
+        <!-- Display Recommended Chords -->
+        <div id="recommendations-display" class="recommendations-display">
+            <h3>Recommended Next Chords:</h3>
+            <ul id="recommendations-list">
+                <li>None</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/microphone.js') }}"></script>
+</body>
+</html>
