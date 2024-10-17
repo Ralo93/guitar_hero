@@ -30,5 +30,4 @@ if __name__ == "__main__":
 
     # You want to compress data.
 
-    
     main()

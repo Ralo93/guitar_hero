@@ -23,11 +23,11 @@ def capture_audio():
         return
     
     chunk = 1024  # Record in chunks of 1024 samples
-    sample_format = pyaudio.paInt16  # 16 bits per sample
+    sample_format = pyaudio.paInt32  # 16 bits per sample
     channels = 1  # Mono recording
     fs = 44100  # Record at 44100 samples per second
     seconds = 4  # Duration of recording
-    output_file = 'data/processed/tmp.wav'
+    output_file = 'data/interim/tmp.wav'
     
     p = pyaudio.PyAudio()
 
@@ -58,17 +58,17 @@ def capture_audio():
         p.terminate()
 
     # Ensure the directory exists
-    #os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
     # Save the recorded audio as a .wav file
-    #wf = wave.open(output_file, 'wb')
-    #wf.setnchannels(channels)
-    #wf.setsampwidth(p.get_sample_size(sample_format))
-    #wf.setframerate(fs)
-    #wf.writeframes(b''.join(frames))
-    #wf.close()
+    wf = wave.open(output_file, 'wb')
+    wf.setnchannels(channels)
+    wf.setsampwidth(p.get_sample_size(sample_format))
+    wf.setframerate(fs)
+    wf.writeframes(b''.join(frames))
+    wf.close()
 
-    #print(f"Audio saved to {output_file}")
+    print(f"Audio saved to {output_file}")
 
     #if return_data:
         # Convert audio data to NumPy array suitable for librosa
@@ -76,4 +76,4 @@ def capture_audio():
     return audio_data
 
 # Call the function
-#capture_audio()
+capture_audio()

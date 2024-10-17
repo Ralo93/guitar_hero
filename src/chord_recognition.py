@@ -14,6 +14,8 @@ def recognize_chord(audio_data, sr=44100):
     chroma = librosa.feature.chroma_stft(y=audio_data, sr=sr)
     # Average the chroma vectors across frames to get a global representation
     chroma_mean = np.mean(chroma, axis=1)
+
+    print(chroma_mean)
     
     # Find the index of the root note (the note with the highest chroma value)
     root_index = np.argmax(chroma_mean)
