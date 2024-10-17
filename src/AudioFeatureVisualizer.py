@@ -48,7 +48,7 @@ class AudioFeatureVisualizer:
         Mel Frequency Cepstral Coefficients
         '''
         plt.figure(figsize=(10, 4))
-        librosa.display.specshow(self.mfcc, x_axis='time', sr=self.sr, y_axis='mel')
+        librosa.display.specshow(self.mfcc, x_axis='time', sr=self.sr, cmap='autumn', y_axis='mel')
         plt.colorbar()
         plt.title('MFCC')
         plt.ylabel('MFCC Coefficients')  # Added y-axis label
@@ -119,7 +119,7 @@ class AudioFeatureVisualizer:
 # Usage Example
 if __name__ == "__main__":
     # Replace 'your_audio_file.wav' with the path to your audio file
-    file_path = 'your_audio_file.wav'
+    file_path = r'C:\Users\rapha\repositories\guitar_hero\data\raw\kaggle_chords\Training\Am\Am_acusticGB_JO_1.wav'
     
     visualizer = AudioFeatureVisualizer(file_path)
     visualizer.plot_all_features()
