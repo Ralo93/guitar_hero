@@ -26,7 +26,7 @@ To get started with this project, follow these steps:
 
 1. **Clone the repository**:
     \`\`\`bash
-    git clone https://github.com/your-username/realtime-chord-classification.git
+    git clone https://github.com/Ralo93/realtime-chord-classification.git
     cd realtime-chord-classification
     \`\`\`
 
