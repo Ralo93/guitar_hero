@@ -15,10 +15,15 @@ This project provides real-time guitar chord classification and harmonic recomme
 ## How It Works
 
 1. **Chord Classification**: The VGGish model, originally trained on general audio features, has been fine-tuned to classify guitar chords. This model listens to your guitar input and predicts the chord being played in real-time.
-   
-2. **Harmonic Graph Representation**: Chord relationships and harmonic progressions are stored in a graph database. This allows for fast retrieval of the most harmonically appropriate chords to follow the current one. A graph database is ideal here due to the highly interconnected nature of chords and their relationships, making it easy to traverse and find the next best option.
 
-3. **Recommendations**: Based on the detected chord and the graph of harmonics, the system suggests possible next chords. This recommendation can be tailored to specific progressions or harmonic preferences (e.g., sticking to diatonic chords or exploring borrowed chords).
+   Mel-Spectogram features:
+
+   
+3. **Harmonic Graph Representation**: Chord relationships and harmonic progressions are stored in a graph database. This allows for fast retrieval of the most harmonically appropriate chords to follow the current one. A graph database is ideal here due to the highly interconnected nature of chords and their relationships, making it easy to traverse and find the next best option.
+
+
+
+5. **Recommendations**: Based on the detected chord and the graph of harmonics, the system suggests possible next chords. This recommendation can be tailored to specific progressions or harmonic preferences (e.g., sticking to diatonic chords or exploring borrowed chords).
 
 ## Installation
 
